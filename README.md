@@ -4,5 +4,11 @@
 - mysql
 
 ```
-docker-compose -f ./mysql-master.yml -up -d
+docker-compose -f ./mysql.yml up -d
+```
+
+- redis
+
+```
+docker-compose -f ./redis.yml up -d
 ```
