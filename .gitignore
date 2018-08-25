@@ -1,7 +1,4 @@
 .idea/
 .vscode/
-
-
 data/*
 log/*
-redis.yml
