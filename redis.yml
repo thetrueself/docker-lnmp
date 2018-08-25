@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+
+  redis-master:
+    build: $PWD/redis/
+    container_name: "redis-master"
+    expose:
+      - "6379"
+    volumes:
+      - $PWD/redis/master/data:/data
+      - $PWD/redis/master/conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - $PWD/redis/master/log:/var/log/redis.log
+    ports:
+      - "6379:6379"

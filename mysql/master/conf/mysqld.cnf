@@ -1,0 +1,10 @@
+
+
+[mysqld]
+port=3306
+datadir=/var/lib/mysql
+character_set_server=utf8mb4
+default-storage-engine=INNODB
+#slow query
+slow_query_log=OFF
+slow_query_log_file=/var/lib/log/mysqld.log/slow.log
