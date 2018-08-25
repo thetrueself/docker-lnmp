@@ -1,4 +1,7 @@
 .idea/
 .vscode/
+
+!data/
 data/*
+!log/
 log/*
