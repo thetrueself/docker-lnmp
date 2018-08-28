@@ -1,7 +1,7 @@
 # docker-lnmp
 基于docker搭建的php开发环境
 
-# 查看容器IP
+- 查看容器IP
 
 ```
  docker  inspect 9e87dd6022cd  | grep "IPAddress"
