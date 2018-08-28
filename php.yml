@@ -1,0 +1,21 @@
+version: '3.1'
+
+services:
+
+  php-fpm-7.1:
+    build: $PWD/php/7.1
+    container_name: "php-fpm-7.1"
+    expose:
+      - "9000"
+    networks:
+      - "my-net"
+    volumes:
+      - $PWD/php/7.1/conf:/usr/local/etc/php
+      - $PWD/php/7.1/log:/phplogs
+      - /www/wwwroot:/www
+    ports:
+      - "9000:9000"
+
+networks:
+  my-net:
+    driver: bridge

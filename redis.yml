@@ -7,9 +7,14 @@ services:
     container_name: "redis-master"
     expose:
       - "6379"
+    networks:
+      - "my-net"
     volumes:
       - $PWD/redis/master/data:/data
       - $PWD/redis/master/conf/redis.conf:/usr/local/etc/redis/redis.conf
       - $PWD/redis/master/log:/var/log/redis.log
     ports:
       - "6379:6379"
+networks:
+  my-net:
+    driver: bridge
