@@ -18,3 +18,14 @@ docker-compose -f ./mysql.yml up -d
 ```
 docker-compose -f ./redis.yml up -d
 ```
+- gitlab
+
+```
+docker-compose -f ./gitlab.yml up -d
+```
+
+- mongodb
+
+```
+docker-compose -f ./mongodb.yml up -d
+```

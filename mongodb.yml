@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+
+  mongodb-master:
+    build: $PWD/mongodb
+    container_name: "mongodb-master"
+    expose:
+    - "27017"
+    networks:
+    - "my-net"
+    volumes:
+    - $PWD/mongodb/master/data:/data/db
+    - $PWD/mongodb/master/conf:/data/configdb
+    - $PWD/mongodb/master/backup:/data/backup
+    ports:
+    - "27017:27017"
+    command: --auth
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+networks:
+  my-net:
+    driver: bridge

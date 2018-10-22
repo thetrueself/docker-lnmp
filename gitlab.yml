@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+
+  my-gitlab:
+    build: $PWD/gitlab
+    container_name: "my-gitlab"
+    expose:
+      - "9001"
+      - "22"
+    networks:
+      - "my-net"
+    volumes:
+      - $PWD/gitlab/config:/etc/gitlab
+      - $PWD/gitlab/log:/var/log/gitlab
+      - $PWD/gitlab/data:/var/opt/gitlab
+    ports:
+      - "9001:9001"
+      - "622:22"
+networks:
+  my-net:
+    driver: bridge
